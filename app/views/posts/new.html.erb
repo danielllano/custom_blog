@@ -3,36 +3,48 @@
 
 
 <%= form_for :post, url: posts_path do |f| %>
-		<p>
-			<%= f.label :title %><br>
-			<%= f.text_field :title %>
-		</p>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+		  <ul>
+		  <% @post.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :author %><br>
+		<%= f.text_field :author_id %>
+	</p>
+
+	<p>
+		<%= f.label :published %><br>
+		<%= f.check_box :published %>
+	</p>
 
 		<p>
-			<%= f.label :author %><br>
-			<%= f.text_field :author_id %>
+			<%= f.label :published_at %><br>
+			<%= f.date_field :published_at %>
 		</p>
 
-		<p>
-			<%= f.label :published %><br>
-			<%= f.check_box :published %>
-		</p>
+	<p>
+		<%= f.label :content %><br>
+		<%= f.text_area :content %>
+	</p>
 
-			<p>
-				<%= f.label :published_at %><br>
-				<%= f.date_field :published_at %>
-			</p>
-
-		<p>
-			<%= f.label :content %><br>
-			<%= f.text_area :content %>
-		</p>
-
-		<p>
-			<%= f.submit %>
-		</p>
+	<p>
+		<%= f.submit %>
+	</p>
 
 <% end %>
+
+<%= link_to 'Atras', posts_path %>
 
 
 
