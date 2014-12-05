@@ -1,3 +1,22 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Lista de Posts</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>Fecha de publicación</th>
+    <th>Publicado?</th>
+    <th>Contenido</th>
+  </tr>
+ 
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.author.name %></td>
+      <td><%= post.published_at %></td>
+      <td><%= post.published %></td>
+      <td><%= post.content %></td>	
+    </tr>
+  <% end %>
+</table>
 
