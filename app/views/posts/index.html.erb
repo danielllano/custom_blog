@@ -15,7 +15,9 @@
       <td><%= post.author.name %></td>
       <td><%= post.published_at %></td>
       <td><%= post.published %></td>
-      <td><%= post.content %></td>	
+      <td><%= post.content %></td>
+      <td><%= link_to 'Ver', post_path(post) %></td>
+      <td><%= link_to 'Editar', edit_post_path(post) %></td>
     </tr>
   <% end %>
 </table>
