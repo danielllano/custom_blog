@@ -1,5 +1,7 @@
 <h1>New post</h1>
 
+
+
 <%= form_for :post do |f| %>
 		<p>
 			<%= f.label :title %><br>
@@ -12,14 +14,14 @@
 		</p>
 
 		<p>
-			<%= f.label :published_at %><br>
-			<%= f.date_field :published_at %>
-		</p>
-
-		<p>
 			<%= f.label :published %><br>
 			<%= f.check_box :author %>
 		</p>
+
+			<p>
+				<%= f.label :published_at %><br>
+				<%= f.date_field :published_at %>
+			</p>
 
 		<p>
 			<%= f.label :content %><br>
@@ -31,3 +33,6 @@
 		</p>
 
 <% end %>
+
+
+
