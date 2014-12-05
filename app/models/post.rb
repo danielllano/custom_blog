@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
 	belongs_to :author
+	has_many :comments
 
 	validates :title, presence: true,
 										length: {minimum: 3}
