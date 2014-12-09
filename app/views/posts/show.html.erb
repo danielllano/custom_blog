@@ -1,24 +1,25 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
- 
-<p>
-  <strong>Author:</strong>
-  <%= @post.author.name %>
-</p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @post.content %>
-</p>
 
-<h2>Comentarios</h2>
-<%= render @post.comments %>
+<div class="container show-view">
+	<%= link_to 'Atras', posts_path, class: "btn btn-default" %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 blog-main" id="post_list">
+			<%= render partial: 'post_row', locals: {post: @post} %>
+			
+      <%= link_to 'Editar', edit_post_path(@post), remote: true, class: "btn btn-default" %>
+      <%= link_to 'Eliminar', post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+			</div>
+		
+			<h3>Comentarios</h3>
+			<hr>
 
-<h2>Has un comentario:</h2>
-<%= render "comments/form" %>
+			<div class="media">
+				<%= render @post.comments %>
+			</div>
 
-<%= link_to 'Atras', posts_path %>
- | <%= link_to 'Editar', edit_post_path(@post) %>
-  | <%= link_to 'Eliminar', post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %></td>
+			<h4>Has un comentario:</h4>
+			<%= render "comments/form" %>
+
+  	</div>
+	</div>
+</div>
