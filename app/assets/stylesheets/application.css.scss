@@ -20,6 +20,14 @@
 body {
 font-family: Georgia, "Times New Roman", Times, serif;
 color: #555;
+background: #eee;
+}
+
+.container {
+background: #fff;
+margin-top: 50px;
+margin-bottom: 50px;
+border-radius: 30px;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -71,4 +79,12 @@ margin: 0 0 10px;
 .btn-default, .btn-danger {
 border-radius: 30px;
 width: 100px;
+}
+
+input#post_published {
+	margin-left: 0px;
+}
+
+.form-label {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
