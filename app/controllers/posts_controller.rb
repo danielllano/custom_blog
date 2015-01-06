@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @titulo = "Nuevo Post"
   end
 
   def create
@@ -24,7 +23,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @titulo = "Editar Post"
   end
 
   def update
